@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rifugio per Bigi ❤️</title>
+<!-- Icona per la Schermata Home (Apple e Android) -->
+<link rel="apple-touch-icon" href="https://fav.farm/❤️">
+<link rel="icon" href="https://fav.farm/❤️">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background: #fff0f3; color: #4a4a4a; display: flex; justify-content: center; min-height: 100vh; padding: 20px; }
+.container { width: 100%; max-width: 420px; background: #ffffff; border-radius: 24px; padding: 24px; box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4); display: flex; flex-direction: column; gap: 20px; position: relative; }
+/* Header & Home */
+.header h1 { color: #ff4d6d; font-size: 1.8rem; margin-bottom: 8px; }
+.header p { color: #555; font-size: 0.95rem; line-height: 1.4; }
+.reminder-box { background: #ffe5ec; border-left: 4px solid #ff4d6d; padding: 14px; border-radius: 12px; font-style: italic; color: #590d22; font-size: 0.95rem; }
+/* Buttons Menu */
+.menu { display: flex; flex-direction: column; gap: 12px; }
+.btn { background: #ff758f; color: white; border: none; padding: 16px; border-radius: 16px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: transform 0.2s, background 0.2s; box-shadow: 0 4px 10px rgba(255, 117, 143, 0.3); text-align: center; text-decoration: none; }
+.btn:active { transform: scale(0.98); }
+.btn-call { background: #c9184a; color: white; display: block; }
+/* Screen Views */
+.screen { display: none; flex-direction: column; gap: 16px; }
+.screen.active { display: flex; }
+.back-btn { background: #f0f0f0; color: #333; border: none; padding: 8px 16px; border-radius: 20px; align-self: flex-start; cursor: pointer; font-size: 0.9rem; }
+/* Swipe Carousel (Pulsante 3) */
+.carousel-container { overflow: hidden; width: 100%; border-radius: 16px; position: relative; touch-action: pan-y; }
+.carousel-track { display: flex; transition: transform 0.3s ease-out; }
+.card { min-width: 100%; background: #ffb3c1; color: #590d22; padding: 40px 20px; border-radius: 16px; text-align: center; font-size: 1.2rem; font-weight: bold; box-sizing: border-box; display: flex; align-items: center; justify-content: center; min-height: 180px; user-select: none; }
+.carousel-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.nav-btn { background: #ff758f; color: white; border: none; padding: 8px 16px; border-radius: 12px; cursor: pointer; }
+/* Breathing Circle (Pulsante 1) */
+.breath-circle { width: 120px; height: 120px; background: #ff8fa3; border-radius: 50%; margin: 20px auto; animation: breathe 8s infinite ease-in-out; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+@keyframes breathe {
+0%, 100% { transform: scale(0.8); background: #ff8fa3; }
+50% { transform: scale(1.2); background: #ff4d6d; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- HOME SCREEN -->
+<div id="home" class="screen active">
+<div class="header">
+<h1>Ciao Bigi ❤️</h1>
+<p>Questa app è un piccolo rifugio creato solo per te, per ricordarti che non sei mai sola e che sono sempre qui.
+
+E ricordati di fare sempre ziki ziki e ziki ziki.</p>
+</div>
+<div class="reminder-box">
+<strong>Promemoria d'amore:</strong>
+
+"Non aver paura, amore. Allontaniamo tutti i mostri. Sei più forte di quanto pensi e più amata di quanto tu possa immaginare."
+</div>
+<div class="menu">
+<button class="btn" onclick="showScreen('screen1')">1. Respiriamo insieme 🫁</button>
+<button class="btn" onclick="showScreen('screen2')">2. Esercizi per tranquillizzarti 🧘‍♀️</button>
+<button class="btn" onclick="showScreen('screen3')">3. Frasi per te, amore 💌</button>
+<button class="btn" onclick="showScreen('screen4')">4. Ho bisogno di Bigi 📞</button>
+</div>
+</div>
+<!-- PULSANTE 1: RESPIRIAMO INSIEME -->
+<div id="screen1" class="screen">
+<button class="back-btn" onclick="showScreen('home')">← Indietro</button>
+<h2>Respiriamo insieme 🫁</h2>
+<p>Segui il cerchio: inspira mentre si espande, espira mentre si rimpicciolisce.</p>
+<div class="breath-circle">Respira</div>
+</div>
+<!-- PULSANTE 2: ESERCIZI PER TRANQUILLIZZARTI -->
+<div id="screen2" class="screen">
+<button class="back-btn" onclick="showScreen('home')">← Indietro</button>
+<h2>Esercizi per tranquillizzarti 🧘‍♀️</h2>
+<p><strong>Tecnica 5-4-3-2-1:</strong></p>
+<ul style="padding-left: 20px; line-height: 1.8;">
+<li>👀 Guarda <strong>5 cose</strong> intorno a te.</li>
+<li>✋ Tocca <strong>4 cose</strong> vicine a te.</li>
+<li>👂 Ascolta <strong>3 suoni</strong> nell'ambiente.</li>
+<li>🌸 Annusa <strong>2 profumi</strong> o odori.</li>
+<li>👅 Concentrati su <strong>1 sapore</strong>.</li>
+</ul>
+</div>
+<!-- PULSANTE 3: FRASI PER TE (CAROSELLO SWIPE) -->
+<div id="screen3" class="screen">
+<button class="back-btn" onclick="showScreen('home')">← Indietro</button>
+<h2>Frasi per te, amore 💌</h2>
+<div class="carousel-container" id="carousel">
+<div class="carousel-track" id="track">
+<div class="card">Lo supereremo insieme</div>
+<div class="card">Sono qui con te amore</div>
+<div class="card">Puzzi un poco 😜</div>
+<div class="card">Ti amo sempre.</div>
+<div class="card">I mostri non esistono.</div>
+<div class="card">Non avere paura</div>
+</div>
+</div>
+<div class="carousel-nav">
+<button class="nav-btn" onclick="moveSlide(-1)">❮ Precedente</button>
+<button class="nav-btn" onclick="moveSlide(1)">Successiva ❯</button>
+</div>
+</div>
+<!-- PULSANTE 4: HO BISOGNO DI BIGI -->
+<div id="screen4" class="screen">
+<button class="back-btn" onclick="showScreen('home')">← Indietro</button>
+<h2>Sono qui per te 📞</h2>
+<p>Premi qui sotto per chiamarmi subito o mandarmi un messaggio:</p>
+<a href="tel:+393452265505" class="btn btn-call">Chiama subito</a>
+<a href="https://wa.me/393452265505" class="btn" style="background:#25D366;">Invia un messaggio WhatsApp</a>
+</div>
+</div>
+<script>
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+/* Gestione Swipe Carosello */
+let currentIndex = 0;
+const track = document.getElementById('track');
+const totalCards = 6;
+
+function moveSlide(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = 0;
+  if (currentIndex >= totalCards) currentIndex = totalCards - 1;
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+let startX = 0;
+const carousel = document.getElementById('carousel');
+carousel.addEventListener('touchstart', e => startX = e.touches[0].clientX, {passive: true});
+carousel.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) moveSlide(1);
+  if (endX - startX > 50) moveSlide(-1);
+}, {passive: true});
+</script>
+</body>
+</html>
